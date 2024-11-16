@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../Context/Authentication';
 
 function Header() {
+    const { userAuth } = useContext(AuthContext);
     return (
         <div>
             <Link to='/'>Homepage</Link>
             <span> | </span>
-            <Link to='/login'>Login</Link>
+            {userAuth ? <p>Logout</p> : <Link to='/login'>Login</Link>}
         </div>
     )
 }
