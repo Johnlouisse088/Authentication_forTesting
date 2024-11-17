@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../Context/Authentication';
 
 function Header() {
-    const { userAuth } = useContext(AuthContext);
+    const { userAuth, handleSubmitLogout } = useContext(AuthContext);
     return (
         <div>
             <Link to='/'>Homepage</Link>
             <span> | </span>
-            {userAuth ? <p>Logout</p> : <Link to='/login'>Login</Link>}
+            {userAuth ? <button onClick={handleSubmitLogout}>Logout</button> : <Link to='/login'>Login</Link>}
         </div>
     )
 }

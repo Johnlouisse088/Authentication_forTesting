@@ -1,15 +1,13 @@
 import React, { useContext } from 'react'
 import { AuthContext } from './../Context/Authentication';
 
-
-
 function LoginPage() {
-    const { handleSubmit, handleChange, userAuth, userForm } = useContext(AuthContext)
+    const { handleSubmitLogin, handleChange, userForm, error } = useContext(AuthContext)
 
     return (
         <div>
-            {userAuth && <p>Hello {userAuth.username}</p>}
-            <form onSubmit={handleSubmit}>
+            {error && alert(error)}
+            <form onSubmit={handleSubmitLogin}>
                 <input
                     type='text'
                     onChange={handleChange}
@@ -30,6 +28,9 @@ function LoginPage() {
     )
 }
 export default LoginPage
+
+
+
 
 
 

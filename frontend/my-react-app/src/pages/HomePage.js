@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../Context/Authentication'
 
 function HomePage() {
+    const { userAuth } = useContext(AuthContext)
     return (
         <div>
-            <p>HomePage</p>
+            {userAuth && <p>Hello {userAuth.username}</p>}
+            <p>You are now in HomePage</p>
         </div>
     )
 }
 
 export default HomePage
+
+
