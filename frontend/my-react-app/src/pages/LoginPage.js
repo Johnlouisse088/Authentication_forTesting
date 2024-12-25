@@ -1,8 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AuthContext } from './../Context/Authentication';
 
 function LoginPage() {
     const { handleSubmitLogin, handleChange, userForm, error } = useContext(AuthContext)
+
+    // useEffect(() => {
+    //     console.log("Child useEFfect")
+    // })
 
     return (
         <div>
